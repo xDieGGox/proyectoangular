@@ -1,0 +1,29 @@
+<div class="banner">
+    <div class="banner-content">
+      <h1 class="titulo">DieGG's Store</h1>
+      <p class="descripcion">Todo lo que necesitas aqui...</p>
+    </div>
+</div>
+
+
+<div class="contenedor-registro">
+    <div class="contenedor-formulario">
+        <h2>Iniciar Sesion</h2>
+        <form>
+            <div class="campo">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo"  [(ngModel)]="correoUsuario" required>
+            </div>
+            <div class="campo">
+                <label for="clave">Contraseña:</label>
+                <input type="password" id="clave" name="clave" [(ngModel)]="claveUsuario" required>
+            </div>
+        </form>
+        <button (click)="iniciarSesion()">Iniciar Sesion</button>
+    </div>
+    <div class="contenedor-logo">
+        <img src="ruta/a/la/imagen.jpg" alt="Logo">
+        <p>Texto debajo de la imagen.</p>
+    </div>
+
+</div>

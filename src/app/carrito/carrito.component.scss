@@ -1,0 +1,111 @@
+.contenedor-principal{
+    width: auto;
+  }
+  
+  .banner {
+    position: relative;
+    text-align: center;
+    background: url('/assets/img/banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 0 20px; /* Añade un espacio a los lados para evitar bordes pegados al texto */
+    padding-left: 130px;
+    padding-top: 30px;
+  }
+  
+  .banner-content {
+    text-align: left;
+  }
+  
+  .banner-content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  //ESTILOS PARA LA TABLA
+  .contenedor-carrito {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+  }
+  
+  .titulo-carrito {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .contenedor-carrito table {
+    width: 60%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  .contenedor-carrito th,
+  .contenedor-carrito td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .contenedor-carrito th {
+    background-color: #f2f2f2;
+  }
+  
+  .contenedor-carrito td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .contenedor-carrito tr:last-child td {
+    border-bottom: none;
+  }
+
+  
+  .contenedor-carrito button {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .contenedor-carrito button:hover {
+    background-color: #0056b3;
+  }
+
+  .contenedor-carrito button.btnEliminarItem {
+    background-color: #ff0000; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reducido el padding para que no sea tan grande */
+    cursor: pointer;
+    font-size: 16px; /* Reducido el tamaño de fuente */
+    width: auto; /* Ancho automático */
+}
+
+.contenedor-carrito button.btnEliminarItem:hover {
+    background-color: #cc0000; /* Cambio de color al pasar el mouse */
+}
+
+  

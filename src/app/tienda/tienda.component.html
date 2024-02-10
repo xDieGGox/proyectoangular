@@ -1,0 +1,74 @@
+
+<div class="banner">
+    <div class="banner-content">
+      <h1 class="titulo">DieGG's Store</h1>
+      <p class="descripcion">Todo lo que necesitas aqui...</p>
+    </div>
+</div>
+
+
+<div class="contenedor-principal">
+    <div class="contenedor-generales">
+        <button class="boton" (click)="abrirModal()">Crear Producto</button>
+        <button class="boton">Ver Todos los Productos</button>
+        <button class="boton">Otras Acciones</button>
+    </div>
+
+    <div class="contenedor-productos">
+        <div class="filtros">
+            <p>filtros</p>
+            <button type="button" (click)="enviar()">Crear Producto</button>
+            <ul *ngFor="let categoria of categorias | async">
+                <li>{{categoria.nombre}}</li>
+            </ul>
+        </div>
+        <div class="productos">
+            <div *ngFor="let prod of productos | async">
+                <div class="cardProducto">
+                    <div *ngIf="prod">
+                        <!--
+                        <img [src]="prod.imagen_producto" />
+                        -->
+                    </div>
+                    <div class="producto-info">
+                        <p class="codigo">Código: {{prod.codigo_producto}}</p>
+                        <p class="nombre">Nombre: {{prod.nombre_producto}}</p>
+                        <p class="precio">Precio: {{prod.precio_producto}}</p>
+                        <input type="number" id="cantidad" name="cantidad" [(ngModel)]="cantidadSeleccionada" min="1" max="100">
+                        <button (click)="anadirCarrito(prod)" class="btn-add-carrito">Añadir al carrito</button>
+                        <button class="btn-ver-producto">Ver producto completo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal  para crear un producto nuevo -->
+<div *ngIf="mostrarModal" class="modal" >
+    <div class="modal-content">
+        <span class="close" (click)="mostrarModal = false">&times;</span>
+        <h2>Crear Nuevo Producto</h2>
+        <form>
+            <label for="categoria">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoProducto.nombre_producto">
+
+            <label for="categoria">Categoria:</label>
+            <select [(ngModel)]="categoria" name="categoria" required>
+                <option *ngFor="let cat of categorias | async" [ngValue]="cat">{{ cat.nombre }}</option>
+            </select>
+
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen" (change)="onFileSelected($event)">
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" [(ngModel)]="nuevoProducto.precio_producto">
+
+            <!-- Otros campos para la creación del producto -->
+
+            <button type="button" (click)="crearProducto()">Crear Producto</button>
+        </form>
+    </div>
+</div>
+
+</div>

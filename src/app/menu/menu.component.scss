@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+  
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #33333300;
+    color: #fff;
+    padding: 10px 0;
+    z-index: 1;
+  }
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+  
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo img {
+    width: 200px;
+}
+  
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+  
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+  
+
+/* Estilo predeterminado del navbar */
+#navbar {
+    background-color: transparent; /* Fondo transparente inicial */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+/* Estilo cuando se hace scroll */
+#navbar.scrolled {
+    background-color: black; /* Cambia el color al hacer scroll */
+}

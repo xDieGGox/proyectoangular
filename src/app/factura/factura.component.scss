@@ -1,0 +1,236 @@
+.contenedor-principal{
+    width: auto;
+  }
+  
+  .banner {
+    position: relative;
+    text-align: center;
+    background: url('/assets/img/banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 0 20px; /* Añade un espacio a los lados para evitar bordes pegados al texto */
+    padding-left: 130px;
+    padding-top: 30px;
+  }
+  
+  .banner-content {
+    text-align: left;
+  }
+  
+  .banner-content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+
+ // ESTILOS PARA LA TABLA
+.contenedor-facturas {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.titulo-facturas {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contenedor-facturas table {
+    width: 80%; /* Modificado para ajustar el ancho de la tabla */
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.contenedor-facturas th,
+.contenedor-facturas td {
+    padding: 10px;
+    text-align: center;
+}
+
+.contenedor-facturas th {
+    background-color: #f2f2f2;
+}
+
+.contenedor-facturas td {
+    border-bottom: 1px solid #ddd;
+}
+
+.contenedor-facturas tr:last-child td {
+    border-bottom: none;
+}
+
+.contenedor-facturas button {
+    display: block;
+    width: 150px; /* Modificado para ajustar el ancho del botón */
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px; /* Modificado para reducir el tamaño de fuente */
+}
+
+.contenedor-facturas button:hover {
+    background-color: #0056b3;
+}
+
+
+
+///DETALES DE LA FACTURA
+.detalles-factura {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.encabezado-factura {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.encabezado-factura p {
+    margin: 0;
+}
+
+.tabla-detalles {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-detalles th,
+.tabla-detalles td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-detalles th {
+    background-color: #f2f2f2;
+}
+
+.tabla-detalles tr:last-child td {
+    border-bottom: none;
+}
+
+.pie-factura {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.pie-factura h4 {
+    margin: 5px 0;
+}
+
+.pie-factura button {
+    padding: 10px 20px;
+    background-color: #c90226;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pie-factura button:hover {
+    background-color: #7e0919;
+}
+
+
+
+
+
+
+/* Estilos para el modal */
+.modal {
+    display: block; /* Ocultar modal por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Hacer que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir desplazamiento si el contenido es más largo que la ventana */
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrar el modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    border-radius: 10px;
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de finalizar compra */
+.finalizar-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.finalizar-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los campos de llenado en el modal */
+.modal-content form label {
+    margin-top: 10px;
+    display: block;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Para que el padding y el borde no aumenten el ancho total */
+}
+
+.modal-content form input[type="text"]:focus,
+.modal-content form input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff; /* Color de borde al obtener el foco */
+}
