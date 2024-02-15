@@ -50,6 +50,7 @@ export class LoginComponent {
               localStorage.setItem("carritoLogueado",JSON.stringify(this.carrito))
               //Esto es para imprimir de prueba
               this.reportesService.imprimirCliente(this.cliente);
+              //this.router.navigate(['/inicio']);
 
             })
             

@@ -31,6 +31,8 @@ export class TiendaComponent {
   mostrarModalBusqueda: boolean = false;
   productosEncontrados: Producto[]=[];
 
+  numeroAdmin: number =0;
+
 
 
   constructor(private productosService: ProductosService, private categoriasService: CategoriasService, private itemsService: ItemsService,private carritosService: CarritosService, private router: Router) { }
@@ -39,6 +41,7 @@ export class TiendaComponent {
   ngOnInit(): void {
     this.productos = this.productosService.getProductos();
     this.categorias = this.categoriasService.getCategorias();
+
   }
 
   //METODO PARA AÑADIR AL CARRITO
@@ -58,6 +61,7 @@ export class TiendaComponent {
       
       if(this.carrito && this.carrito.codigo_carrito !== undefined){
           const codigoCarrito: number = this.carrito.codigo_carrito;
+          this.numeroAdmin=codigoCarrito;
           console.log("NUMERO CARRO: "+ codigoCarrito);
 
           this.carritosService.getCarritoPorCodigoCliente(codigoCarrito).subscribe(data=>{
@@ -109,7 +113,7 @@ export class TiendaComponent {
       // Crear una URL de objeto para la imagen seleccionada
       const reader = new FileReader();
       reader.onload = (e: any) => {
-        this.nuevoProducto.imagen_producto = e.target.result; // Almacenar la URL de objeto como la ubicación de la imagen
+        this.nuevoProducto.imagen_producto = e.target.result; // Almacena la imagen en base64 paa guardarla en la Base de datos
       };
       reader.readAsDataURL(file);
     }

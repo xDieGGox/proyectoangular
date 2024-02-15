@@ -14,7 +14,7 @@ export class MenuComponent {
     {title: 'Mi Carrito', path: 'micarrito'},
   ]
 
-
+  //Cambia al componente .menu para qie se pueda desplegar como toggle
   toggleMenu() {
     const menu = document.querySelector('.menu');
     if (menu) { // Verifica si menu no es null
