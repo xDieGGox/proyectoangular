@@ -8,6 +8,7 @@ import { Carrito } from '../domain/carrito';
 import { ItemsService } from '../services/items.service';
 import { Item } from '../domain/item';
 import { CarritosService } from '../services/carritos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tienda',
@@ -25,9 +26,14 @@ export class TiendaComponent {
   producto: Producto = new Producto();
   item: Item = new Item();
   cantidadSeleccionada: number=0;
+  //Para el buscador
+  nombreProductoABuscar: string = '';
+  mostrarModalBusqueda: boolean = false;
+  productosEncontrados: Producto[]=[];
 
 
-  constructor(private productosService: ProductosService, private categoriasService: CategoriasService, private itemsService: ItemsService,private carritosService: CarritosService) { }
+
+  constructor(private productosService: ProductosService, private categoriasService: CategoriasService, private itemsService: ItemsService,private carritosService: CarritosService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -87,7 +93,6 @@ export class TiendaComponent {
 
   //PARA EL MODAL DE LA IMAGEN
   
-
   abrirModal() {
     this.mostrarModal = true;
     console.log("APLASTO EL CREAR")
@@ -132,6 +137,30 @@ export class TiendaComponent {
     this.productosService.envioTransferencia("ENVIADO DESDE VISUAL").subscribe(data=>{
       console.log(data);
     })
+  }
+
+
+  verProducto(producto: Producto) {
+    this.router.navigate(['/producto'], { queryParams: { producto: JSON.stringify(producto) } });
+  }
+
+
+  // Método para buscar productos
+  buscarProducto(nombreProducto: string) {
+    this.productosService.getProductos().subscribe(data => {
+      // Filtrar los productos según el nombre recibido
+      this.productosEncontrados = data.filter((producto: Producto) =>
+        producto.nombre_producto && producto.nombre_producto.toLowerCase().includes(nombreProducto.toLowerCase())
+      );
+      // Mostrar el modal de búsqueda
+      this.mostrarModalBusqueda = true;
+    });
+  }
+  
+  
+  // Método para cerrar el modal de búsqueda
+  cerrarModalBusqueda() {
+    this.mostrarModalBusqueda = false;
   }
 
 }

@@ -15,6 +15,14 @@ export class MenuComponent {
   ]
 
 
+  toggleMenu() {
+    const menu = document.querySelector('.menu');
+    if (menu) { // Verifica si menu no es null
+      menu.classList.toggle('open');
+    }
+  }
+
+
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const navbar = document.getElementById('navbar');
@@ -28,4 +36,8 @@ export class MenuComponent {
       }
     }
   }
+
+
+
+  
 }

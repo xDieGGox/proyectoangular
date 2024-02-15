@@ -6,6 +6,7 @@ import { DetallesService } from '../services/detalles.service';
 import { Cliente } from '../domain/cliente';
 import { Factura } from '../domain/factura';
 import { Detalle } from '../domain/detalle';
+import { ReportesService } from '../services/reportes.service';
 
 @Component({
   selector: 'app-factura',
@@ -21,7 +22,7 @@ export class FacturaComponent {
   facturas: any;
   corrreoCli:string="";
   
-  constructor(private router: Router,private clienteServices: ClientesService, private facturasService: FacturasService, private detallesService: DetallesService){
+  constructor(private router: Router,private clienteServices: ClientesService, private facturasService: FacturasService, private detallesService: DetallesService, private reportesService: ReportesService){
 
   }
 
@@ -92,5 +93,7 @@ export class FacturaComponent {
 
   finalizarCompra(){
     this.modalVisible = false;
+    this.reportesService.imprimirFactura(this.cliente,this.factura,this.detalles);
+    this.router.navigate(['/finalizar']);
   }
 }

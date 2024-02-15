@@ -4,6 +4,12 @@
       <h1 class="titulo">DieGG's Store</h1>
       <p class="descripcion">Todo lo que necesitas aqui...</p>
     </div>
+
+    <div class="buscador-container">
+        <input type="text" placeholder="Buscar producto..." [(ngModel)]="nombreProductoABuscar" class="buscador-input">
+        <button (click)="buscarProducto(nombreProductoABuscar)" class="buscador-btn">Buscar</button>
+    </div>
+
 </div>
 
 
@@ -16,8 +22,8 @@
 
     <div class="contenedor-productos">
         <div class="filtros">
-            <p>filtros</p>
-            <button type="button" (click)="enviar()">Crear Producto</button>
+            <p><strong>Filtros</strong></p>
+            
             <ul *ngFor="let categoria of categorias | async">
                 <li>{{categoria.nombre}}</li>
             </ul>
@@ -26,9 +32,9 @@
             <div *ngFor="let prod of productos | async">
                 <div class="cardProducto">
                     <div *ngIf="prod">
-                        <!--
+                        
                         <img [src]="prod.imagen_producto" />
-                        -->
+                        
                     </div>
                     <div class="producto-info">
                         <p class="codigo">Código: {{prod.codigo_producto}}</p>
@@ -36,7 +42,7 @@
                         <p class="precio">Precio: {{prod.precio_producto}}</p>
                         <input type="number" id="cantidad" name="cantidad" [(ngModel)]="cantidadSeleccionada" min="1" max="100">
                         <button (click)="anadirCarrito(prod)" class="btn-add-carrito">Añadir al carrito</button>
-                        <button class="btn-ver-producto">Ver producto completo</button>
+                        <button (click)="verProducto(prod)"class="btn-ver-producto">Ver producto completo</button>
                     </div>
                 </div>
             </div>
@@ -45,9 +51,9 @@
 
 
     <!-- Modal  para crear un producto nuevo -->
-<div *ngIf="mostrarModal" class="modal" >
-    <div class="modal-content">
-        <span class="close" (click)="mostrarModal = false">&times;</span>
+<div *ngIf="mostrarModal" class="modalPN" >
+    <div class="modal-contentPN">
+        <span class="closePN" (click)="mostrarModal = false">&times;</span>
         <h2>Crear Nuevo Producto</h2>
         <form>
             <label for="categoria">Nombre:</label>
@@ -72,3 +78,30 @@
 </div>
 
 </div>
+
+
+
+
+<!-- Modal para mostrar productos encontrados -->
+<div class="modal" [ngClass]="{'show': mostrarModalBusqueda}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Productos Encontrados</h5>
+          <button type="button" class="close" (click)="cerrarModalBusqueda()">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Mostrar los productos encontrados -->
+          <div *ngFor="let prod of productosEncontrados">
+            <!-- Otros detalles del producto -->
+            <p class="nombre">Nombre: {{prod.nombre_producto}}</p>
+            <p class="precio">Precio: {{prod.precio_producto}}</p>
+            <input type="number" id="cantidad" name="cantidad" [(ngModel)]="cantidadSeleccionada" min="1" max="100">
+            <button (click)="anadirCarrito(prod)" class="btn-add-carrito">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

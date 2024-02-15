@@ -1,0 +1,21 @@
+<div class="banner">
+    <div class="banner-content">
+      <h1 class="titulo">DieGG's Store</h1>
+      <p class="descripcion">Todo lo que necesitas aqui...</p>
+    </div>
+</div>
+
+
+<div class="contenedor-producto">
+    <div class="producto-imagen">
+        <img [src]="producto.imagen_producto" />
+    </div>
+    <div class="detalles-producto">
+         <h1>{{producto.nombre_producto}}</h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ligula libero. Cras posuere justo nec consequat ultrices. Phasellus mattis dapibus justo, vitae viverra nulla vehicula sed. Sed id magna velit. Quisque sit amet eros quis odio ultricies tincidunt</p>
+         <h2>$ {{producto.precio_producto}}</h2>
+         <label for="">Cantidad:</label>
+         <input type="number" name="" id="">
+         <button>Agregar al Carrito</button>
+    </div>
+</div>

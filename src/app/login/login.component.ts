@@ -4,6 +4,7 @@ import { Cliente } from '../domain/cliente';
 import { ClientesService } from '../services/clientes.service';
 import { CarritosService } from '../services/carritos.service';
 import { Carrito } from '../domain/carrito';
+import { ReportesService } from '../services/reportes.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent {
   codigoClienteLogueado: number = 0;
   carrito: Carrito = new Carrito();
 
-  constructor(private router: Router, private clienteService: ClientesService, private carritoService: CarritosService){
+  constructor(private router: Router, private clienteService: ClientesService, private carritoService: CarritosService, private reportesService: ReportesService){
     
   }
 
@@ -30,7 +31,9 @@ export class LoginComponent {
 
     this.clienteService.getClienteCorreo(this.correoUsuario).subscribe(data =>{
       this.cliente=data;
-      localStorage.setItem("personaLogueada",JSON.stringify(this.cliente));
+      if(this.claveUsuario==this.cliente.clave_cliente){
+
+        localStorage.setItem("personaLogueada",JSON.stringify(this.cliente));
       this.codigoClienteLogueado = data?.codigo_cliente;
       console.log("CODIGO A ENVIAR: "+this.codigoClienteLogueado);
       
@@ -45,16 +48,26 @@ export class LoginComponent {
             this.carritoService.getCarritoPorCodigoCliente(this.codigoClienteLogueado).subscribe(data=>{
               this.carrito=data;
               localStorage.setItem("carritoLogueado",JSON.stringify(this.carrito))
+              //Esto es para imprimir de prueba
+              this.reportesService.imprimirCliente(this.cliente);
+
             })
             
           })
         }else{
-          console.log("YA EXISTE UN CARRITO")
+          console.log("YA EXISTE UN CARRITO") 
           this.carrito=data;
           localStorage.setItem("carritoLogueado",JSON.stringify(this.carrito));
+          this.router.navigate(['/inicio']);
 
         }
       })
+
+      }else{
+        console.log("CONTRASEÑA INCORRECTA")
+        alert("CONTRASEÑA INCORRECTA")
+      }
+      
 
 
     })

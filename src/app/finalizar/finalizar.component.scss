@@ -1,0 +1,77 @@
+.contenedor-principal{
+    width: auto;
+  }
+  
+  .banner {
+    position: relative;
+    text-align: center;
+    background: url('/assets/img/banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 0 20px; /* Añade un espacio a los lados para evitar bordes pegados al texto */
+    padding-left: 130px;
+    padding-top: 30px;
+  }
+  
+  .banner-content {
+    text-align: left;
+  }
+  
+  .banner-content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  /*ESTILOS DE FINALIZAR*/
+  .contenedor-finalizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.contenedor-finalizar > div {
+    max-width: 80%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .contenedor-finalizar > div {
+        max-width: 90%;
+    }
+}
+

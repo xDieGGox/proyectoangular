@@ -98,3 +98,12 @@ button:hover {
 .contenedor-logo p {
     margin: 0; /* Eliminar margen del párrafo */
 }
+
+
+@media screen and (max-width: 769px){
+  .contenedor-registro{
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+}

@@ -4,11 +4,18 @@
       <img src="assets/img/logo.png" alt="">
     </div>
     <nav>
-      <ul>
-        <li *ngFor="let link of pages">
-            <a href="#" [routerLink]="link.path">{{link.title}}</a>
-        </li>
-      </ul>
+      
+        <ul class="menu">
+          <li *ngFor="let link of pages">
+              <a class="opc" href="#" [routerLink]="link.path">{{link.title}}</a>
+          </li>
+        </ul>
+        
+      <div class="hamburger-menu" (click)="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </nav>
   </div>
 </header>

@@ -137,7 +137,7 @@
 
 
 /* ESTILOS PARA EL MODAL DE CRACION DEL PRODUCTO */
-.modal {
+.modalPN {
     display: block; /* Ocultar el modal por defecto */
     position: fixed; /* Fijar la posición del modal */
     z-index: 1; /* Por encima de otros elementos */
@@ -149,7 +149,7 @@
     overflow: auto; /* Habilitar el desplazamiento si el contenido es demasiado largo */
 }
 
-.modal-content {
+.modal-contentPN {
     background-color: #fefefe;
     margin: 10% auto; /* Centra vertical y horizontalmente */
     padding: 20px;
@@ -157,32 +157,32 @@
     width: 80%; /* Ancho del modal */
 }
 
-.close {
+.closePN {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.closePN:hover,
+.closePN:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-content form {
+.modal-contentPN form {
     display: grid;
     gap: 10px;
   }
   
-  .modal-content label {
+  .modal-contentPN label {
     font-weight: bold;
   }
   
-  .modal-content input[type="text"],
-  .modal-content input[type="number"],
-  .modal-content select {
+  .modal-contentPN input[type="text"],
+  .modal-contentPN input[type="number"],
+  .modal-contentPN select {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -190,7 +190,7 @@
     box-sizing: border-box;
   }
   
-  .modal-content input[type="file"] {
+  .modal-contentPN input[type="file"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -199,7 +199,7 @@
     background-color: #f9f9f9;
   }
   
-  .modal-content button {
+  .modal-contentPN button {
     background-color: #4caf50; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
@@ -208,6 +208,156 @@
     cursor: pointer; /* Cambia el cursor al pasar el ratón */
   }
   
-  .modal-content button:hover {
+  .modal-contentPN button:hover {
     background-color: #45a049; /* Cambia el color de fondo al pasar el ratón por encima */
   }
+
+
+
+
+  /*BUSCADOR ESTILOS*/
+  .buscador-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el buscador y el siguiente contenido */
+  }
+  
+  .buscador-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    flex-grow: 1; /* Hace que el input ocupe todo el espacio disponible */
+  }
+  
+  .buscador-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buscador-btn:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  }
+
+
+  /* ESTILOS PARA EL MODAL DE PRODUCTOS ENCONTRADOS*/
+  /* Estilos para el modal de búsqueda */
+.modal {
+  display: none; /* Por defecto el modal está oculto */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para mostrar el modal */
+.modal.show {
+  display: block; /* Mostrar el modal cuando la clase 'show' está presente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  background-color: #fefefe; /* Fondo del modal */
+  margin: 15% auto; /* Centrar verticalmente y dejar un margen en la parte superior */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho del contenido del modal */
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de cerrar del modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 769px){
+
+  .filtros{
+    display: none;
+  }
+  .contenedor-productos{
+    display: grid;
+    grid-template-columns: 100%;
+    padding-top: 10px;
+  }
+
+  .productos{
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+
+  .buscador-container {
+    display: grid;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el buscador y el siguiente contenido */
+  }
+  
+  .buscador-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    flex-grow: 1; /* Hace que el input ocupe todo el espacio disponible */
+  }
+  
+  .buscador-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buscador-btn:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  }
+
+
+  .banner-content {
+    text-align: left;
+  }
+  
+  .banner-content h1 {
+    margin-top: 120px;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .banner {
+   
+    height: 250px; /* Ajusta la altura según tus necesidades */
+    
+  }
+
+
+}

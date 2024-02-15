@@ -248,3 +248,128 @@ a {
 hr{
   border: 1px solid black;
 }
+
+
+
+
+@media screen and (max-width: 769px) {
+
+  /* Estilos para dispositivos móviles */
+
+/* Ajustar el tamaño del título en el banner */
+.banner-content h1 {
+  font-size: 40px; /* Reducir el tamaño del título */
+}
+
+/* Ajustar el tamaño del texto en el banner */
+.banner-content p {
+  font-size: 20px; /* Reducir el tamaño del texto */
+}
+
+/* Ajustar el tamaño del botón en el banner */
+.comprar-btn {
+  font-size: 1em; /* Reducir el tamaño del botón */
+  padding: 8px 16px; /* Reducir el padding del botón */
+}
+
+/* Ajustar el tamaño de las cards */
+.card {
+  width: 45%; /* Reducir el ancho de las cards */
+  height: 120px; /* Reducir la altura de las cards */
+}
+
+/* Ajustar el tamaño del texto en las cards */
+.card img {
+  width: 60%; /* Reducir el tamaño de las imágenes en las cards */
+}
+
+/* Ajustar el tamaño del título en la sección de ofertas */
+.banner-oferta h2 {
+  font-size: 30px; /* Reducir el tamaño del título */
+}
+
+/* Ajustar el tamaño del título del producto en la sección de ofertas */
+.contenedor-producto h1 {
+  font-size: 30px; /* Reducir el tamaño del título del producto */
+}
+
+/* Ajustar el tamaño del precio en la sección de ofertas */
+.contenedor-producto h2,
+.contenedor-producto p {
+  font-size: 20px; /* Reducir el tamaño del precio */
+}
+
+/* Ajustar el tamaño del descuento en la sección de ofertas */
+.offer-details h1,
+.offer-details h2,
+.offer-details p {
+  font-size: 30px; /* Reducir el tamaño del descuento */
+}
+
+/* Ajustar el tamaño del título en la sección de tarjetas */
+.tarjeta-titulo h1 {
+  font-size: 24px; /* Reducir el tamaño del título */
+}
+
+/* Ajustar el tamaño del texto en las tarjetas de producto */
+.producto-detalle h2,
+.producto-detalle p {
+  font-size: 16px; /* Reducir el tamaño del texto */
+}
+
+/* Ajustar el tamaño del pie de página */
+.contenedor-pie h2 {
+  font-size: 18px; /* Reducir el tamaño del título */
+}
+
+/* Ajustar el tamaño del texto en el pie de página */
+ul li,
+a {
+  font-size: 14px; /* Reducir el tamaño del texto */
+}
+
+
+.contenedor-tarjetas{
+  display: grid;
+  padding: 20px;
+  grid-template-columns: 80%;
+  justify-content: center;
+}
+
+.contenedor-pie {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.informacion,
+.enlaces,
+.siguenos {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.cards-container {
+  display: none;
+
+}
+
+.banner-oferta {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.offer-image{
+  grid-template-columns: 100%;
+}
+
+.contenedor-audifonos{
+  
+  grid-template-columns: 100%;
+}
+
+}
